@@ -19,7 +19,7 @@ module "vpc_untrust" {
   subnets              = var.untrust_subnet
   cidrs                = var.untrust_cidr
   regions              = var.regions
-  allowed_sources      = ["0.0.0.0/0"]
+  allowed_sources      = var.mgmt_sources
 }
 
 module "vpc_trust" {
@@ -29,7 +29,7 @@ module "vpc_trust" {
   subnets              = var.trust_subnet
   cidrs                = var.trust_cidr
   regions              = var.regions
-  allowed_sources      = ["0.0.0.0/0"]
+  allowed_sources      = ["10.0.0.0/8, 192.168.0.0/16"]
   delete_default_route = true
 }
 
