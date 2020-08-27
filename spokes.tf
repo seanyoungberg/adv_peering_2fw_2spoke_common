@@ -6,7 +6,7 @@ module "vpc_spoke1" {
   subnets              = var.spoke1_subnets
   cidrs                = var.spoke1_cidrs
   regions              = var.regions
-  allowed_sources      = ["0.0.0.0/0"]
+  allowed_sources      = ["10.0.0.0/8", "192.168.0.0/16"]
   delete_default_route = true
 }
 
@@ -77,7 +77,7 @@ module "vpc_spoke2" {
   subnets              = var.spoke2_subnets
   cidrs                = var.spoke2_cidrs
   regions              = var.regions
-  allowed_sources      = ["0.0.0.0/0"]
+  allowed_sources      = ["10.0.0.0/8", "192.168.0.0/16"]
   delete_default_route = true
 }
 
